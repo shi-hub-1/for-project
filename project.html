@@ -1,0 +1,153 @@
+special project
+<</title><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Unnikuttan 💖 My Valentine</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to right, #ffdde1, #ee9ca7);
+        height: 100vh;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .card, .final {
+        background: white;
+        width: 90%;
+        max-width: 380px;
+        padding: 30px;
+        border-radius: 25px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        color: #e60073;
+    }
+
+    p {
+        font-size: 18px;
+        color: #444;
+        line-height: 1.5;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .yes {
+        background-color: #ff4d88;
+        color: white;
+    }
+
+    .no {
+        background-color: #ccc;
+        position: absolute;
+    }
+
+    .yes:hover {
+        background-color: #e60073;
+    }
+
+    .heart {
+        position: fixed;
+        font-size: 22px;
+        animation: float 4s linear;
+    }
+
+    @keyframes float {
+        0% { bottom: 0; opacity: 1; }
+        100% { bottom: 100%; opacity: 0; }
+    }
+
+    .final {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FIRST PAGE -->
+<div class="card" id="card">
+    <h1>Hey Karlee 💕</h1>
+    <p>
+        You are my home,<br>
+        my happiness,<br>
+        and my favorite feeling 🥹💖
+    </p>
+    <p><strong>hey unnikuttaaa, will you be my Valentine? 💘</strong></p>
+
+    <button class="btn yes" onclick="yesClicked()">YES 💕</button>
+    <button class="btn no" id="noBtn" onmouseover="moveNo()">NO 🙈</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div class="final" id="final">
+    <h1>Forever Us 💍💖</h1>
+    <p>
+        Thank you for choosing me,<br>
+        today and always 🥹❤️
+    </p>
+    <p>
+        <strong>
+        Happy Valentine’s Day,<br>
+        Karlee 💕
+        </strong>
+    </p>
+    <p>
+        — Yours forever,<br>
+        chaaruuuuu💖
+    </p>
+</div>
+
+<script>
+    function yesClicked() {
+        document.getElementById("card").style.display = "none";
+        document.getElementById("final").style.display = "block";
+    }
+
+    function moveNo() {
+        const btn = document.getElementById("noBtn");
+        const x = Math.random() * 250;
+        const y = Math.random() * 250;
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
+    }
+
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }, 400);
+</script>
+
+</body>
+</html>
+
+
+    </head>
+</html>
